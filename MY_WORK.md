@@ -132,29 +132,35 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [November 8, 2026, 5:00 PM]
+**What I did**: forked the repository and rename it to my name, verified public visibility
 
 **Details**:
+- forked makopt/OS-Assignment3-Starter-481 and renamed the fork to OS-Assignment3-Muneera-AlQuhaiz-481
+- verified the repository visibility is public
 
-**Challenges**:
+**Challenges**:none
 
-**Solution**:
+**Solution**:-
 
-**Time spent**:
+**Time spent**: 10 minutes
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
+### Entry 2 - [November 13, 2026, 9:30 PM]
+**What I did**: set my student ID in SchedulerSimulationSync.java, Implemented feature 1 by protecting the shared ready queue with a reentranlock 
 
 **Details**:
+- updated the studentID variable on line 304 with my actual ID
+- Imported java.util.concurrent.locks.Reentrant.Lock in schedulerSimulationSync.java
+- Declared a Reentrantlock queueLock inside The ReadyQueue class
+- Protected all methods accessing or modifying the shared list and map (add,poll, processOf and snapshot) using lock() and a try/finally block to ensure locks are always released safely
+- committed and pushed the change with a clear commit message
+**Challenges**: ensuring that the return statements inside poll() and other methods do not bypass the lock releas
 
-**Challenges**:
+**Solution**: placed the try block after lock.lock() and put unlock() inside the finally block to guarantee it excuses regardless of returns or exceptions
 
-**Solution**:
-
-**Time spent**:
+**Time spent**: 45 minutes
 
 ---
 
