@@ -164,16 +164,21 @@
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 3 - [November 15, 2026, 8:30 PM]
+**What I did**: Implemented feature 2 by protecting the shared statistic counter with a ReentrantLock
 
 **Details**:
+- Declared a ReentrantLook statsLook inside the SharedStates class 
+- Protected all three updater methods (incrementContextSwitch, incrementCompletedProcess, addServiceTime) and getter methods (getCompletedProcessCount, getContextSwitchCount, getTotalServiceTime) using lock() and try/finally blocks
+- Chose a single lock granularity for all statistics since updates are independent counters, simplifying management and preventing race condition during read and write
+- committed and pushed the change with a clear commit message
 
 **Challenges**:
+ Ensuring that both readers and writers are fully protected to avoid reading stale or inconsistent counter value during verification
 
-**Solution**:
+**Solution**: Applied the lock symmetrically across all getters and updaters in sharedStats
 
-**Time spent**:
+**Time spent**: 40 minutes
 
 ---
 
