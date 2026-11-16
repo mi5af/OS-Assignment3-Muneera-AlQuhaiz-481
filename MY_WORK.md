@@ -182,16 +182,21 @@
 
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**:
+### Entry 4 - [November 16, 2026, 11:02 PM]
+**What I did**:Implemented Feature 3 by replacing busy waiting with a counting semaphore and handled clean shutdown.
 
 **Details**:
+- Declared a Semaphore semaphore = new Semaphore(0) inside ReadyQueue.
+- Called semaphore.release() inside add() whenever a process is added to the queue and added acquireProcess() inside CpuWorker to block threads safely instead of spinning in a busy waiting loop.
+- Removed the Thread.sleep(20) polling loop and ensured busyWaitPolls remains at 0.
+- Implemented clean shutdown by calling readyQueue.releaseAll(SharedStats.totalCPUs) when the last process completes waking up any blocked CPU threads so they terminate properly without hanging.
+- Committed and pushed the changes with a clear commit message.
 
-**Challenges**:
+**Challenges**:Ensuring that CPUs blocked on acquire() do not hang indefinitely after all processes finish execution.
 
-**Solution**:
+**Solution**:Added a check and a broadcast release (releaseAll) when the completed process count reaches the total process count.
 
-**Time spent**:
+**Time spent**: 30 minutes
 
 ---
 
