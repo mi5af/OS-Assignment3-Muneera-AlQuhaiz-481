@@ -145,7 +145,7 @@ class ReadyQueue {
     private final ReentrantLock queueLock = new ReentrantLock();
 
     // TODO Feature 3: declare the counting semaphore that counts the processes waiting in the ready queue here
-    private final Semaphore queueSemaphore = new Semaphore(0);
+    private final Semaphore semaphore = new Semaphore(0);
 
     // Add a process to the ready queue (new process, or a process that did not finish its quantum)
     public void add(Process process) {
@@ -157,7 +157,7 @@ class ReadyQueue {
         map.put(thread, process);
 
         // TODO Feature 3: signal that one more process is available in the queue
-        queueSemaphore.release();
+        semaphore.release();
 
         System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() + Colors.RESET +
                 Colors.BLUE + " (Priority: " + process.getPriority() + ") added to ready queue" + Colors.RESET +

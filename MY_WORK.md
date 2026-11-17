@@ -200,16 +200,19 @@
 
 ---
 
-### Entry 5 - [Date and Time]
-**What I did**:
+### Entry 5 - [November 17, 2026, 2:00 PM]
+**What I did**: Completed the documentation, reflection, and technical answers in MY_WORK.md.
 
 **Details**:
+- Answered all four reflection questions about synchronization and challenges.
+- Completed all technical answers with code explanations and output references.
+- Verified all student information and repository links.
 
-**Challenges**:
+**Challenges**:Summarizing complex concurrency concepts in simple, clear sentences.
 
-**Solution**:
+**Solution**:Focused on core principles like mutual exclusion, semaphores, and real-world examples.
 
-**Time spent**:
+**Time spent**: 40 minutes
 
 ---
 
