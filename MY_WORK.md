@@ -358,8 +358,8 @@ Verification block of **my final version**:
 
 | Critical section (variable / method) | Lock used | Why it needs protection |
 |---|---|---|
-| [e.g., `ReadyQueue.poll()`] | [lock name] | [reason] |
-| [...] | [...] | [...] |
+| [ ReadyQueue.add() & ReadyQueue.poll()] | [queueLock] | [To prevent multiple CPUs from modifying or reading the ready queue list and map at the same time, avoiding race conditions and lost processes.] |
+| [ SharedStats updaters ] | [statsLock] | [To protect shared statistics counters from overlapping reads and writes, ensuring all quanta and completed processes are counted accurately.] |
 
 ## Question 3: Busy Waiting vs Semaphore
 
